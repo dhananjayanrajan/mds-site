@@ -1,0 +1,9 @@
+[href="/deployment"],
+[href="/docs"],
+[href*="marketplace"],
+[href*="extensions"],
+[href*="report-bug"],
+[href*="request-feature"],
+.version-information {
+  display: none !important;
+}

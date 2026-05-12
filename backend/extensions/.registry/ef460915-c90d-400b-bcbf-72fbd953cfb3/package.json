@@ -1,0 +1,42 @@
+{
+  "name"              : "@protoqol/directus-extension-formatted-numbers",
+  "author"            : {
+    "name" : "Protoqol",
+    "email": "open-source@protoqol.nl",
+    "url"  : "https://protoqol.nl"
+  },
+  "repository"        : {
+    "type": "git",
+    "url" : "https://github.com/Protoqol/directus-extension-formatted-numbers"
+  },
+  "license"           : "MIT",
+  "description"       : "Directus extension: Format numbers in a easily readable way. With localisation available!",
+  "icon"              : "forward_media",
+  "version"           : "1.0.9",
+  "keywords"          : [
+    "directus",
+    "directus-extension",
+    "directus-extension-display"
+  ],
+  "type"              : "module",
+  "files"             : [
+    "dist"
+  ],
+  "directus:extension": {
+    "type"  : "display",
+    "path"  : "dist/index.js",
+    "source": "src/index.ts",
+    "host"  : ">=10.10.0"
+  },
+  "scripts"           : {
+    "build"   : "directus-extension build",
+    "dev"     : "directus-extension build -w --no-minify",
+    "link"    : "directus-extension link",
+    "validate": "directus-extension validate"
+  },
+  "devDependencies"   : {
+    "@directus/extensions-sdk": "17.0.5",
+    "typescript"              : "^5.9.3",
+    "vue"                     : "^3.5.27"
+  }
+}

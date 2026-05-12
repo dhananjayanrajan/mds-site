@@ -1,0 +1,62 @@
+{
+  "name": "directus-extension-country-selector",
+  "version": "1.1.2",
+  "description": "Directus interface extension for selecting countries from a comprehensive dropdown list",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-interface",
+    "country",
+    "country-selector",
+    "flag",
+    "geography",
+    "location"
+  ],
+  "author": {
+    "name": "Marko Siilak",
+    "email": "marko@siilak.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markosiilak/directus-extension-country-selector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/markosiilak/directus-extension-country-selector/issues"
+  },
+  "homepage": "https://github.com/markosiilak/directus-extension-country-selector#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "directus:extension": {
+    "type": "interface",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": "^11.0.0"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build --watch",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "lint": "echo \"No linting configured\" && exit 0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "peerDependencies": {
+    "@directus/extensions-sdk": "^15.0.0"
+  },
+  "dependencies": {
+    "countries-list": "^3.1.1"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "^16.0.0",
+    "typescript": "^5.9.0"
+  }
+}

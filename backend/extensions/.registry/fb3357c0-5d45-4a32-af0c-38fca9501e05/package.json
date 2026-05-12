@@ -1,0 +1,47 @@
+{
+	"name": "directus-extension-image-upload-resizer",
+	"description": "Automatically lighten and resize large images during upload",
+	"author": "jacpax",
+	"license": "GPL v2",
+	"icon": "image",
+	"version": "1.2.1",
+	"repository": {
+		"type" : "git",
+		"url" : "github:kolosseo/directus-extension-image-upload-resizer"
+	},
+	"homepage": "https://www.npmjs.com/package/directus-extension-image-upload-resizer",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-hook",
+		"resize",
+		"upload",
+		"image"
+	],
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "hook",
+		"path": "dist/index.js",
+		"source": "src/index.js",
+		"host": "^9.0.0 <=11.12.0",
+		"sandbox": {
+			"enabled": false,
+			"requestedScopes": {
+				"sleep": {},
+				"log": {}
+			}
+		}
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"deploy": "directus-extension build && ./scripts/deploy",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "11.0.1"
+	}
+}

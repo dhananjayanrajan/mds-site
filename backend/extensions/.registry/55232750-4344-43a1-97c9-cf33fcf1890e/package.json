@@ -1,0 +1,44 @@
+{
+  "name": "@ribertec/directus-extension-masked-interface",
+  "version": "2.0.1",
+  "description": "Masked text input interface for Directus",
+  "type": "module",
+  "author": "@ribertec",
+  "license": "GPL-3.0",
+  "icon": "input",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-extension-interface",
+    "masked-interface",
+    "masked-input"
+  ],
+  "directus:extension": {
+    "type": "interface",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": "^10.0.0 || ^11.0.0",
+    "sandbox": {
+      "enabled": true,
+      "requestedScopes": {}
+    }
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build --no-minify --watch",
+    "validate": "directus-extension validate",
+    "link": "directus-extension link"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "inputmask": "^5.0.7"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "^17.0.11",
+    "vue": "^3.5.13",
+    "typescript": "^4.6.4",
+    "sass": "^1.51.0"
+  }
+}

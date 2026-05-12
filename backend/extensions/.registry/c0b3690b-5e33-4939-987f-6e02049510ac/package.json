@@ -1,0 +1,36 @@
+{
+	"name": "directus-extension-phone-number-interface",
+	"description": "A custom Directus extension for handling phone numbers, providing an intuitive interface for input, validation, and formatting to ensure consistency and accuracy.",
+	"icon": "extension",
+	"version": "1.2.1",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-interface"
+	],
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"author": "huy0612 pqh0612@gmail.com",
+	"license": "MIT",
+	"directus:extension": {
+		"type": "interface",
+		"path": "dist/index.js",
+		"source": "src/index.ts",
+		"host": "^10.10.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "13.0.1",
+		"typescript": "^5.7.3",
+		"vue": "^3.5.13"
+	},
+	"dependencies": {
+		"node-sass": "^9.0.0"
+	}
+}

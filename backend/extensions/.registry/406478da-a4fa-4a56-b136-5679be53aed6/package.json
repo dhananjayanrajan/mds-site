@@ -1,0 +1,42 @@
+{
+  "name": "directus-extension-qrcode",
+  "description": "Really simple operation to generate QR Codes in directus flows",
+  "icon": "qr_code_2",
+  "version": "1.0.1",
+  "license": "MIT",
+  "author": "Rémi LAFORGUE",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-extension-operation"
+  ],
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "directus:extension": {
+    "type": "operation",
+    "path": {
+      "app": "dist/app.js",
+      "api": "dist/api.js"
+    },
+    "source": {
+      "app": "src/app.js",
+      "api": "src/api.js"
+    },
+    "host": "^10.10.0"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "16.0.2",
+    "vue": "^3.5.22"
+  },
+  "dependencies": {
+    "qr-image": "^3.2.0"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link",
+    "validate": "directus-extension validate"
+  }
+}

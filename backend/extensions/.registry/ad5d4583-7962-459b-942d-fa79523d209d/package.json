@@ -1,0 +1,53 @@
+{
+  "name": "@onderwijsin/directus-extension-cache-flush",
+  "type": "module",
+  "version": "1.3.1",
+  "description": "Send requests to external applications to flush cache upon data changes",
+  "icon": "extension",
+  "author": {
+    "name": "Onderwijs in",
+    "email": "hallo@onderwijs.in",
+    "url": "https://github.com/onderwijsin"
+  },
+  "contributors": [
+    {
+      "name": "Remi Huigen",
+      "email": "remi@onderwijs.in",
+      "url": "https://github.com/remihuigen"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-extension-hook"
+  ],
+  "files": [
+    "dist"
+  ],
+  "directus:extension": {
+    "type": "hook",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": "^10.10.0 || ^11.0.0"
+  },
+  "dependencies": {
+    "ofetch": "^1.4.1"
+  },
+  "devDependencies": {
+    "@directus/api": "^30.0.0",
+    "@directus/extensions": "^3.0.10",
+    "@directus/extensions-sdk": "^16.0.1",
+    "@directus/types": "^13.2.2",
+    "@types/node": "^24.3.0",
+    "typescript": "5.9.2",
+    "zod": "4.1.5",
+    "utils": "^0.4.0"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link",
+    "validate": "directus-extension validate"
+  }
+}

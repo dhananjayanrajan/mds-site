@@ -1,0 +1,98 @@
+{
+  "name": "directus-extension-super-table",
+  "version": "0.2.17",
+  "description": "A powerful and feature-rich table layout extension for Directus 11+ with inline editing, quick filters, and manual sorting",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-layout",
+    "table",
+    "inline-editing",
+    "super-table"
+  ],
+  "homepage": "https://github.com/smartlabsAT/directus-super-table#readme",
+  "bugs": {
+    "url": "https://github.com/smartlabsAT/directus-super-table/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartlabsAT/directus-super-table.git"
+  },
+  "license": "MIT",
+  "author": "smartlabs AT",
+  "type": "module",
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "index.js",
+  "directus:extension": {
+    "type": "layout",
+    "path": "index.js",
+    "source": "index.ts",
+    "host": "^11.0.0"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "dev:browser": "node playwright-tools/playwright-dev.js",
+    "watch": "node playwright-tools/watch-dev.js",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest --watch",
+    "test:e2e": "node playwright-tools/test-extension.js",
+    "inspect": "node playwright-tools/inspect-vertical-alignment.js",
+    "console": "node playwright-tools/playwright-console-monitor.js",
+    "analyze": "node playwright-tools/playwright-assistant.js --report",
+    "debug": "node playwright-tools/playwright-assistant.js",
+    "ai": "node playwright-tools/ai-helper.js",
+    "ai:diagnose": "node playwright-tools/ai-helper.js diagnose",
+    "ai:package": "node playwright-tools/ai-helper.js package",
+    "ai:quick": "node playwright-tools/ai-helper.js quick",
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --fix",
+    "type-check": "vue-tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{js,ts,vue,json,css}\"",
+    "format:check": "prettier --check \"src/**/*.{js,ts,vue,json,css}\"",
+    "quality": "pnpm run type-check && pnpm run lint && pnpm run format:check",
+    "quality:fix": "pnpm run lint:fix && pnpm run format"
+  },
+  "dependencies": {
+    "@directus/format-title": "^12.0.1",
+    "date-fns": "^4.1.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "^11.0.10",
+    "@directus/types": "^13.2.2",
+    "@directus/utils": "^13.0.9",
+    "@eslint/js": "^9.33.0",
+    "@playwright/test": "^1.54.2",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^24.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.40.0",
+    "@typescript-eslint/parser": "^8.40.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "@vue/test-utils": "^2.4.6",
+    "chalk": "^5.5.0",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-vue": "^10.4.0",
+    "happy-dom": "^18.0.1",
+    "jsdom": "^26.1.0",
+    "playwright": "^1.54.2",
+    "prettier": "^3.6.2",
+    "typescript": "^5.0.0",
+    "vitest": "^3.2.4",
+    "vue": "^3.3.0",
+    "vue-eslint-parser": "^10.2.0",
+    "vue-router": "^4.5.1",
+    "vue-tsc": "^3.0.5"
+  }
+}

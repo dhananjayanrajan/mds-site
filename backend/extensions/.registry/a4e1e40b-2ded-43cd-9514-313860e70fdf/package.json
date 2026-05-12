@@ -1,0 +1,36 @@
+{
+  "name": "@olympusone/directus-extension-favicon",
+  "description": "Expose the favicon of the Directus instance",
+  "icon": "extension",
+  "version": "1.0.1",
+  "author": "OlympusOne <info@olympusone.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olympusone/directus-extension-favicon/issues"
+  },
+  "homepage": "https://github.com/olympusone/directus-extension-favicon#readme",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-extension-endpoint"
+  ],
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "directus:extension": {
+    "type": "endpoint",
+    "path": "dist/index.js",
+    "source": "src/index.js",
+    "host": "^10.10.0"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link",
+    "validate": "directus-extension validate"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "13.0.2"
+  }
+}

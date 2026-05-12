@@ -1,0 +1,47 @@
+{
+	"name": "directus-extension-typograf",
+	"version": "1.0.0",
+	"description": "Apply typography rules to text fields with support for 27 languages",
+	"author": "Anton Kovalev",
+	"license": "Apache-2.0",
+	"icon": "spellcheck",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-interface",
+		"typograf",
+		"typography"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/antonko/directus-extension-typograf.git"
+	},
+	"bugs": {
+		"url": "https://github.com/antonko/directus-extension-typograf/issues"
+	},
+	"homepage": "https://github.com/antonko/directus-extension-typograf#readme",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "interface",
+		"path": "dist/index.js",
+		"source": "src/index.ts",
+		"host": "^11.0.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link",
+		"validate": "directus-extension validate"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "17.0.3",
+		"typescript": "^5.9.3",
+		"vue": "^3.5.25"
+	},
+	"dependencies": {
+		"typograf": "^7.6.0"
+	}
+}

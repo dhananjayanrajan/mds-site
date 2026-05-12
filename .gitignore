@@ -1,0 +1,13 @@
+# Root
+.DS_Store
+
+# Backend
+backend/node_modules/
+backend/.env
+backend/uploads/
+
+# Frontend
+frontend/node_modules/
+frontend/.env
+frontend/.next/    # or .nuxt/ depending on your framework
+frontend/dist/

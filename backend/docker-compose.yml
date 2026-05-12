@@ -1,0 +1,68 @@
+networks:
+  mds-site:
+    name: mds-site
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+
+services:
+  mail:
+    image: axllent/mailpit
+    container_name: mds-mail
+    restart: unless-stopped
+    networks:
+      - mds-site
+    ports:
+      - "8087:8025"
+      - "127.0.0.1:1025:1025"
+
+  cache:
+    image: redis:7-alpine
+    container_name: mds-cache
+    restart: unless-stopped
+    networks:
+      - mds-site
+    ports:
+      - "127.0.0.1:6380:6379"
+    volumes:
+      - mds-cache-data:/data
+
+  directus:
+    image: directus/directus:11.16.1
+    container_name: mds-directus
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - mds-site
+    ports:
+      - "8085:8055"
+    volumes:
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+      - ./logs:/directus/logs
+    env_file: .env
+    depends_on:
+      - cache
+      - mail
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: mds-frontend
+    restart: unless-stopped
+    networks:
+      - mds-site
+    ports:
+      - "8086:3000"
+    environment:
+      DIRECTUS_URL: http://mds-directus:8055
+      NEXT_PUBLIC_DIRECTUS_URL: http://192.168.0.106:8085
+    depends_on:
+      - directus
+
+volumes:
+  mds-cache-data:
+    name: mds-cache-data
